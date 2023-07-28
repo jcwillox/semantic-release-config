@@ -2,6 +2,7 @@ import type { Options, PluginSpec } from "semantic-release";
 import {
   commitAnalyzerConfig,
   execConfig,
+  forceReleaseConfig,
   githubConfig,
   npmConfig,
   releaseNotesConfig,
@@ -25,6 +26,7 @@ const config: Options = {
     githubConfig,
     npmConfig,
     execConfig,
+    forceReleaseConfig,
     slackBotConfig,
   ),
 };
