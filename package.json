@@ -12,7 +12,12 @@
   "scripts": {
     "semantic-release": "node ./dist/cli.js",
     "dev": "tsup --watch",
-    "build": "tsup"
+    "build": "tsup",
+    "typecheck": "tsc",
+    "lint": "eslint . --cache --max-warnings=0 --ext js,cjs,mjs,jsx,ts,tsx",
+    "lint:fix": "pnpm run lint --fix",
+    "format": "prettier --cache --write .",
+    "format:check": "prettier --cache --check ."
   },
   "dependencies": {
     "@semantic-release/error": "^4.0.0",
@@ -24,6 +29,14 @@
     "@tsconfig/node18": "18.2.0",
     "@types/node": "18.16.18",
     "@types/semantic-release__error": "3.0.0",
+    "@typescript-eslint/eslint-plugin": "6.0.0",
+    "eslint": "8.45.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-import-resolver-typescript": "3.5.5",
+    "eslint-plugin-import": "npm:eslint-plugin-i@2.27.5-4",
+    "eslint-plugin-only-warn": "1.1.0",
+    "eslint-plugin-prettier": "5.0.0",
+    "prettier": "3.0.0",
     "tsup": "7.1.0",
     "typescript": "5.1.6"
   },
