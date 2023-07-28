@@ -11,6 +11,9 @@ dependencies:
   '@types/semantic-release':
     specifier: ^20.0.1
     version: 20.0.1
+  destr:
+    specifier: ^2.0.0
+    version: 2.0.0
   execa:
     specifier: ^7.2.0
     version: 7.2.0
@@ -1290,6 +1293,10 @@ packages:
 
   /deprecation@2.3.1:
     resolution: {integrity: sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ==}
+    dev: false
+
+  /destr@2.0.0:
+    resolution: {integrity: sha512-FJ9RDpf3GicEBvzI3jxc2XhHzbqD8p4ANw/1kPsFBfTvP1b7Gn/Lg1vO7R9J4IVgoMbyUmFrFGZafJ1hPZpvlg==}
     dev: false
 
   /dir-glob@3.0.1:

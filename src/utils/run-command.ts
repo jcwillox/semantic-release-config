@@ -1,3 +1,4 @@
+import { destr } from "destr";
 import { ExecaError, execaCommand } from "execa";
 import template from "lodash/fp/template.js";
 import type { Config, Context } from "semantic-release";
@@ -16,7 +17,7 @@ export async function runCommand(
   result.stdout?.pipe(stdout ?? process.stdout, { end: false });
   result.stderr?.pipe(stderr ?? process.stderr, { end: false });
 
-  return (await result).stdout.trim();
+  return destr((await result).stdout.trim());
 }
 
 export function isExecaError(error: unknown): error is ExecaError {
