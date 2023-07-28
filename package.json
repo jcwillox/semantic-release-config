@@ -1,0 +1,94 @@
+{
+  "name": "@jcwillox/semantic-release-config",
+  "version": "0.0.0-dev",
+  "description": "A semantic-release config with improved defaults and configurable through environment variables",
+  "author": "Josh Willox <joshwillox@gmail.com> (https://github.com/jcwillox/)",
+  "license": "MIT",
+  "repository": "jcwillox/semantic-release-config",
+  "keywords": [
+    "semantic-release"
+  ],
+  "type": "module",
+  "scripts": {
+    "semantic-release": "node ./dist/cli.js",
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@semantic-release/error": "^4.0.0",
+    "@types/semantic-release": "^20.0.1",
+    "execa": "^7.2.0",
+    "semantic-release": "^21.0.7"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "18.2.0",
+    "@types/node": "18.16.18",
+    "@types/semantic-release__error": "3.0.0",
+    "tsup": "7.1.0",
+    "typescript": "5.1.6"
+  },
+  "bin": "dist/cli.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./dist/*.d.ts",
+        "default": "./dist/*.js"
+      },
+      "require": {
+        "types": "./dist/*.d.cts",
+        "default": "./dist/*.cjs"
+      }
+    },
+    "./*/*": {
+      "import": {
+        "types": "./dist/*/*.d.ts",
+        "default": "./dist/*/*.js"
+      },
+      "require": {
+        "types": "./dist/*/*.d.cts",
+        "default": "./dist/*/*.cjs"
+      }
+    },
+    "./exec-cmd": {
+      "import": {
+        "types": "./dist/exec-cmd.d.ts",
+        "default": "./dist/exec-cmd.js"
+      },
+      "require": {
+        "types": "./dist/exec-cmd.d.ts",
+        "default": "./dist/exec-cmd.js"
+      }
+    },
+    "./force-publish": {
+      "import": {
+        "types": "./dist/force-publish.d.ts",
+        "default": "./dist/force-publish.js"
+      },
+      "require": {
+        "types": "./dist/force-publish.d.ts",
+        "default": "./dist/force-publish.js"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "packageManager": "pnpm@8.6.7",
+  "engines": {
+    "node": "^16 || ^18"
+  }
+}
