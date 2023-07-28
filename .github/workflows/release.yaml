@@ -1,6 +1,21 @@
 name: "Release"
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      draft:
+        type: boolean
+        description: "Draft release"
+        default: false
+      release_type:
+        type: choice
+        description: "Release type"
+        default: "auto"
+        options:
+          - "auto"
+          - "patch"
+          - "minor"
+          - "major"
 
 jobs:
   publish:
@@ -37,3 +52,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          SEMANTIC_RELEASE_GITHUB_DRAFT: ${{ inputs.draft }}
+          SEMANTIC_RELEASE_FORCE_RELEASE: ${{ inputs.release_type }}
