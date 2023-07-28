@@ -6,6 +6,8 @@ export default defineConfig({
     cli: "src/cli.ts",
     configs: "src/configs/index.ts",
     "utils/index": "./src/utils/index.ts",
+    "utils/run-command": "src/utils/run-command.ts",
+    "exec-cmd": "src/plugins/exec-cmd.ts",
   },
   format: ["cjs", "esm"],
   loader: {
