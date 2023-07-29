@@ -12,7 +12,12 @@ export async function runCommand(
   { stdout, stderr, ...ctx }: Context & Config,
 ) {
   cmd = template(cmd)({ ...ctx });
-  const result = execaCommand(cmd, { env: ctx.env, cwd: ctx.cwd });
+
+  const result = execaCommand(cmd, {
+    env: ctx.env,
+    cwd: ctx.cwd,
+    shell: true,
+  });
 
   result.stdout?.pipe(stdout ?? process.stdout, { end: false });
   result.stderr?.pipe(stderr ?? process.stderr, { end: false });
