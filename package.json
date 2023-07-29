@@ -44,6 +44,8 @@
     "typescript": "5.1.6"
   },
   "bin": "dist/cli.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "files": [
     "dist"
   ],
