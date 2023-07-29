@@ -1,4 +1,5 @@
 import footerPartial from "../templates/footer.hbs";
+import headerPartial from "../templates/header.hbs";
 import { definePlugin } from "../utils";
 import type { ReleaseNotesPlugin } from "./types";
 
@@ -25,10 +26,11 @@ export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
     parserOpts: {
       mergePattern: /^Merge pull request #(\d+) from (.*)$/,
       mergeCorrespondence: ["id", "source"],
+      noteKeywords: ["BREAKING CHANGE", "DEPRECATED"],
     },
     writerOpts: {
       // hide header as github already has one
-      headerPartial: "",
+      headerPartial,
       // add view full changelog link to footer
       footerPartial,
       commitGroupsSort: (a, b) => {
@@ -38,6 +40,8 @@ export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
       // extend angular preset with custom commit types
       transform: (commit, context) => {
         const issues: string[] = [];
+
+        console.log(commit);
 
         // treat merge commits as squash
         // unless they don't have a type
@@ -55,7 +59,11 @@ export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
         }
 
         commit.notes?.forEach((note) => {
-          note.title = "🚨 Breaking Changes";
+          if (note.title.startsWith("BREAKING CHANGE")) {
+            note.title = note.title = "🚨 Breaking Changes";
+          } else if (note.title.startsWith("DEPRECATED")) {
+            note.title = note.title = "⚠️ Deprecated";
+          }
         });
 
         // rework commit message

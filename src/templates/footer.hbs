@@ -1,14 +1,3 @@
-{{#if noteGroups}}
-  {{#each noteGroups}}
-
-    ### {{title}}
-
-    {{#each notes}}
-      * {{#if commit.scope}}**{{commit.scope}}:** {{/if}}{{text}}
-    {{/each}}
-  {{/each}}
-
-{{/if}}
 **Full Changelog**: [`{{previousTag}}...{{currentTag~}}`]({{#if @root.repository~}}
   {{~#if @root.host}}
     {{~@root.host}}/

@@ -19,7 +19,7 @@ type ExtendedCommit = Omit<Commit, "hash" | "subject"> & {
   id?: string;
   merge?: boolean;
   type: string;
-  notes?: { title: string }[];
+  notes?: { title: string; text?: string }[];
   revert?: boolean;
   scope?: string;
   title: string;
