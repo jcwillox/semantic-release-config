@@ -1,5 +1,10 @@
 # Semantic Release Config
 
+[![License](https://img.shields.io/github/license/jcwillox/semantic-release-config?style=flat-square)](https://github.com/jcwillox/semantic-release-config/blob/main/LICENSE)
+[![Version](https://img.shields.io/npm/v/%40jcwillox%2Fsemantic-release-config?style=flat-square)](https://www.npmjs.com/package/@jcwillox/semantic-release-config)
+[![Publish Size](https://flat.badgen.net/packagephobia/publish/@jcwillox/semantic-release-config)](https://packagephobia.com/result?p=@jcwillox/semantic-release-config)
+[![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 The shared semantic release config and plugins for my projects.
 
 ## Usage
