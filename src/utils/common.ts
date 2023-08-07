@@ -40,3 +40,7 @@ export function parseBool(value: string | undefined): boolean | undefined {
   if (value === "false") return false;
   return undefined;
 }
+
+export function capitalize(s: string): string {
+  return s[0].toUpperCase() + s.slice(1);
+}

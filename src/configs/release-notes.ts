@@ -1,6 +1,7 @@
 import footerPartial from "../templates/footer.hbs";
 import headerPartial from "../templates/header.hbs";
-import { definePlugin } from "../utils";
+import mainTemplate from "../templates/template.hbs";
+import { capitalize, definePlugin } from "../utils";
 import type { ReleaseNotesPlugin } from "./types";
 
 const COMMIT_TYPES: Record<string, string> = {
@@ -22,13 +23,14 @@ const merges = new Set<string>();
 export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
   "@semantic-release/release-notes-generator",
   {
-    preset: "angular",
+    preset: "conventionalcommits",
     parserOpts: {
       mergePattern: /^Merge pull request #(\d+) from (.*)$/,
       mergeCorrespondence: ["id", "source"],
       noteKeywords: ["BREAKING CHANGE", "DEPRECATED"],
     },
     writerOpts: {
+      mainTemplate,
       // hide header as github already has one
       headerPartial,
       // add view full changelog link to footer
@@ -57,9 +59,10 @@ export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
         }
 
         commit.notes?.forEach((note) => {
-          if (note.title.startsWith("BREAKING CHANGE")) {
+          if (note.text) note.text = capitalize(note.text);
+          if (note.title?.startsWith("BREAKING CHANGE")) {
             note.title = note.title = "🚨 Breaking Changes";
-          } else if (note.title.startsWith("DEPRECATED")) {
+          } else if (note.title?.startsWith("DEPRECATED")) {
             note.title = note.title = "⚠️ Deprecated";
           }
         });
@@ -113,8 +116,7 @@ export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
 
         // capitalize commit message
         if (commit.subject) {
-          commit.subject =
-            commit.subject.charAt(0).toUpperCase() + commit.subject.slice(1);
+          commit.subject = capitalize(commit.subject);
         }
 
         // remove references that already appear in the subject
