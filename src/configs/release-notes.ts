@@ -41,8 +41,6 @@ export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
       transform: (commit, context) => {
         const issues: string[] = [];
 
-        console.log(commit);
-
         // treat merge commits as squash
         // unless they don't have a type
         if (COMMIT_TYPES[commit.type]) {
