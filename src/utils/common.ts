@@ -1,12 +1,36 @@
 import { existsSync, readFileSync } from "fs";
 import { basename } from "path";
-import type { Config, Context, Options, PluginSpec } from "semantic-release";
+import type {
+  AddChannelContext,
+  AnalyzeCommitsContext,
+  FailContext,
+  GenerateNotesContext,
+  Options,
+  PluginSpec,
+  PrepareContext,
+  PublishContext,
+  SuccessContext,
+  VerifyConditionsContext,
+  VerifyReleaseContext,
+} from "semantic-release";
+
+type Hooks = {
+  verifyConditions?: (
+    config: Options,
+    context: VerifyConditionsContext,
+  ) => unknown;
+  analyzeCommits?: (config: Options, context: AnalyzeCommitsContext) => unknown;
+  verifyRelease?: (config: Options, context: VerifyReleaseContext) => unknown;
+  generateNotes?: (config: Options, context: GenerateNotesContext) => unknown;
+  prepare?: (config: Options, context: PrepareContext) => unknown;
+  publish?: (config: Options, context: PublishContext) => unknown;
+  addChannel?: (config: Options, context: AddChannelContext) => unknown;
+  success?: (config: Options, context: SuccessContext) => unknown;
+  fail?: (config: Options, context: FailContext) => unknown;
+};
 
 export const definePlugin = <T extends PluginSpec>(config: T): T => config;
-
-export const defineHook = <T extends Options, R = unknown>(
-  fn: (config: T, context: Context & Config) => R,
-) => fn;
+export const definePluginHooks = (hooks: Hooks) => hooks;
 
 export function getPackageJSON(): Record<string, unknown> | undefined {
   if (existsSync("./package.json")) {

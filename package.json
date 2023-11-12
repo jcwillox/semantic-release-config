@@ -21,28 +21,27 @@
   },
   "dependencies": {
     "@semantic-release/error": "^4.0.0",
-    "@types/semantic-release": "^20.0.1",
     "conventional-changelog-conventionalcommits": "^6.1.0",
-    "destr": "^2.0.0",
+    "destr": "^2.0.2",
     "execa": "^7.2.0",
     "lodash": "^4.17.21",
-    "semantic-release": "^21.0.7"
+    "semantic-release": "^21.1.2"
   },
   "devDependencies": {
     "@tsconfig/node20": "20.1.2",
-    "@types/lodash": "4.14.196",
+    "@types/lodash": "4.14.201",
     "@types/node": "20.9.0",
-    "@types/semantic-release__error": "3.0.0",
-    "@typescript-eslint/eslint-plugin": "6.0.0",
-    "eslint": "8.45.0",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-import-resolver-typescript": "3.5.5",
-    "eslint-plugin-import": "npm:eslint-plugin-i@2.27.5-4",
+    "@types/semantic-release__error": "3.0.3",
+    "@typescript-eslint/eslint-plugin": "6.10.0",
+    "eslint": "8.53.0",
+    "eslint-config-prettier": "8.10.0",
+    "eslint-import-resolver-typescript": "3.6.1",
+    "eslint-plugin-import": "npm:eslint-plugin-i@2.29.0",
     "eslint-plugin-only-warn": "1.1.0",
-    "eslint-plugin-prettier": "5.0.0",
-    "prettier": "3.0.0",
-    "tsup": "7.1.0",
-    "typescript": "5.1.6"
+    "eslint-plugin-prettier": "5.0.1",
+    "prettier": "3.0.3",
+    "tsup": "7.2.0",
+    "typescript": "5.2.2"
   },
   "bin": "dist/cli.js",
   "main": "dist/index.cjs",
@@ -106,7 +105,7 @@
     "access": "public",
     "provenance": true
   },
-  "packageManager": "pnpm@8.6.7",
+  "packageManager": "pnpm@8.10.2",
   "engines": {
     "node": "^18 || ^20"
   }

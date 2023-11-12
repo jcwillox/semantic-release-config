@@ -1,7 +1,7 @@
 import { destr } from "destr";
 import { ExecaError, execaCommand } from "execa";
 import template from "lodash/fp/template.js";
-import type { Config, Context } from "semantic-release";
+import type { VerifyConditionsContext } from "semantic-release";
 
 /**
  * Runs a command and returns the output
@@ -9,7 +9,7 @@ import type { Config, Context } from "semantic-release";
  */
 export async function runCommand(
   cmd: string,
-  { stdout, stderr, ...ctx }: Context & Config,
+  { stdout, stderr, ...ctx }: VerifyConditionsContext,
 ) {
   cmd = template(cmd)({ ...ctx });
 
