@@ -8,9 +8,6 @@ dependencies:
   '@semantic-release/error':
     specifier: ^4.0.0
     version: 4.0.0
-  '@types/semantic-release':
-    specifier: ^20.0.5
-    version: 20.0.5
   conventional-changelog-conventionalcommits:
     specifier: ^6.1.0
     version: 6.1.0
@@ -658,15 +655,10 @@ packages:
     resolution: {integrity: sha512-nekiGu2NDb1BcVofVcEKMIwzlx4NjHlcjhoxxKBNLtz15Y1z7MYf549DFvkHSId02Ax6kGwWntIBPC3l/JZcmw==}
     dependencies:
       undici-types: 5.26.5
+    dev: true
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
-    dev: false
-
-  /@types/semantic-release@20.0.5:
-    resolution: {integrity: sha512-KOnAenccRS53JzEXPe/lgK65JOAWn5jM7xJPqCt2F3FlN0qUR9BoZaXW9e0VLNlOPlu8a5/BZUoml2rXWcvNjg==}
-    dependencies:
-      '@types/node': 20.9.0
     dev: false
 
   /@types/semantic-release__error@3.0.3:
@@ -847,7 +839,7 @@ packages:
     engines: {node: ^16.0.0 || >=18.0.0}
     dependencies:
       '@typescript-eslint/types': 6.2.0
-      eslint-visitor-keys: 3.4.1
+      eslint-visitor-keys: 3.4.3
     dev: true
 
   /@ungap/structured-clone@1.2.0:
@@ -3603,6 +3595,7 @@ packages:
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+    dev: true
 
   /unique-string@3.0.0:
     resolution: {integrity: sha512-VGXBUVwxKMBUznyffQweQABPRRW1vHZAbadFZud4pLFAqRGvv/96vafgjWFqzourzr8YonlQiPgH0YCJfawoGQ==}
