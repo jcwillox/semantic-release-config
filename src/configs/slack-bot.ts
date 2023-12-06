@@ -21,6 +21,11 @@ export const slackBotConfig =
           notifyOnSuccess: true,
           notifyOnFail: true,
         },
+        {
+          pattern: "staging",
+          notifyOnSuccess: true,
+          notifyOnFail: true,
+        },
       ],
     },
   ]);
