@@ -18,6 +18,7 @@ const config: Options = {
     "next-major",
     { name: "beta", prerelease: true },
     { name: "alpha", prerelease: true },
+    { name: "staging", prerelease: "rc" },
   ],
   plugins: ((...plugins: (PluginSpec | undefined | false)[]) =>
     plugins.filter(isTruthy))(
