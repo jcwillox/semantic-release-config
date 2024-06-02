@@ -41,6 +41,7 @@ export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
       },
       // extend angular preset with custom commit types
       transform: (commit, context) => {
+        commit = { ...commit };
         const issues: string[] = [];
 
         // treat merge commits as squash
@@ -124,7 +125,14 @@ export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
           (reference) => issues.indexOf(reference.issue) === -1,
         );
 
-        return commit;
+        return {
+          notes: commit.notes,
+          type: commit.type,
+          scope: commit.scope,
+          shortHash: commit.shortHash,
+          subject: commit.subject,
+          references: commit.references,
+        };
       },
     },
   },

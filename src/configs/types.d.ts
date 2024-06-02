@@ -8,7 +8,7 @@ export type ReleaseNotesPlugin = [
       transform?: (
         commit: ExtendedCommit,
         context: Context,
-      ) => ExtendedCommit | undefined;
+      ) => Partial<ExtendedCommit> | undefined;
       [key: string]: unknown;
     };
     [key: string]: unknown;
