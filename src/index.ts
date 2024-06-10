@@ -1,8 +1,10 @@
 import type { Options, PluginSpec } from "semantic-release";
 import {
+  changelogConfig,
   commitAnalyzerConfig,
   execConfig,
   forceReleaseConfig,
+  gitConfig,
   githubConfig,
   npmConfig,
   releaseNotesConfig,
@@ -24,8 +26,10 @@ const config: Options = {
     plugins.filter(isTruthy))(
     commitAnalyzerConfig,
     releaseNotesConfig,
+    changelogConfig,
     githubConfig,
     npmConfig,
+    gitConfig,
     execConfig,
     forceReleaseConfig,
     slackBotConfig,

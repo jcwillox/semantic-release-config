@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@semantic-release/error": "^4.0.0",
+    "@semantic-release/git": "^10.0.1",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "destr": "^2.0.3",
     "execa": "^9.1.0",
@@ -78,6 +79,16 @@
       "require": {
         "types": "./dist/*/*.d.cts",
         "default": "./dist/*/*.cjs"
+      }
+    },
+    "./changelog": {
+      "import": {
+        "types": "./dist/changelog.d.ts",
+        "default": "./dist/changelog.js"
+      },
+      "require": {
+        "types": "./dist/changelog.d.ts",
+        "default": "./dist/changelog.js"
       }
     },
     "./exec-cmd": {

@@ -7,6 +7,7 @@ export default defineConfig({
     configs: "src/configs/index.ts",
     "utils/index": "./src/utils/index.ts",
     "utils/run-command": "src/utils/run-command.ts",
+    changelog: "src/plugins/changelog.ts",
     "exec-cmd": "src/plugins/exec-cmd.ts",
     "force-publish": "src/plugins/force-publish.ts",
   },
