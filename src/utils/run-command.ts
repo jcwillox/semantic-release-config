@@ -1,5 +1,5 @@
 import { destr } from "destr";
-import { ExecaError, execaCommand } from "execa";
+import { ExecaError, execa, parseCommandString } from "execa";
 import template from "lodash/fp/template.js";
 import type { VerifyConditionsContext } from "semantic-release";
 
@@ -13,7 +13,8 @@ export async function runCommand(
 ) {
   cmd = template(cmd)({ ...ctx });
 
-  const result = execaCommand(cmd, {
+  const [file, ...args] = parseCommandString(cmd);
+  const result = execa(file, args, {
     env: ctx.env,
     cwd: ctx.cwd,
     shell: true,
