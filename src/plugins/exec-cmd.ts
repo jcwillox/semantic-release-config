@@ -26,6 +26,16 @@ export default definePluginHooks({
     if (!cmd) return;
     return cmd && runFailCommand(cmd, ctx, "EVERIFYCONDITIONS");
   },
+  analyzeCommits: async (_, ctx) => {
+    const cmd = ctx.env.SEMANTIC_RELEASE_CMD_ANALYZE_COMMITS;
+    if (!cmd) return;
+    return cmd && runFailCommand(cmd, ctx, "EANALYZECOMMITS");
+  },
+  verifyRelease: async (_, ctx) => {
+    const cmd = ctx.env.SEMANTIC_RELEASE_CMD_VERIFY_RELEASE;
+    if (!cmd) return;
+    return cmd && runFailCommand(cmd, ctx, "EVERIFYRELEASE");
+  },
   generateNotes: async (_, ctx) => {
     const cmd = ctx.env.SEMANTIC_RELEASE_CMD_GENERATE_NOTES;
     if (!cmd) return;
@@ -45,5 +55,10 @@ export default definePluginHooks({
     const cmd = ctx.env.SEMANTIC_RELEASE_CMD_CHANNEL;
     if (!cmd) return;
     return cmd && runFailCommand(cmd, ctx, "EPUBLISHFAILED");
+  },
+  success: async (_, ctx) => {
+    const cmd = ctx.env.SEMANTIC_RELEASE_CMD_SUCCESS;
+    if (!cmd) return;
+    return cmd && runFailCommand(cmd, ctx, "ESUCCESSFAILED");
   },
 });
