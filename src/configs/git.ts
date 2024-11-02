@@ -28,6 +28,6 @@ export const gitConfig =
           : undefined),
       message:
         process.env.SEMANTIC_RELEASE_GIT_MESSAGE ??
-        "release: ${nextRelease.version} [skip ci]\\n\\n${nextRelease.notes}",
+        "release: ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
     },
   ]);
