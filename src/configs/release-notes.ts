@@ -59,13 +59,19 @@ export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
           }
         }
 
-        commit.notes?.forEach((note) => {
-          if (note.text) note.text = capitalize(note.text);
-          if (note.title?.startsWith("BREAKING CHANGE")) {
-            note.title = note.title = "🚨 Breaking Changes";
-          } else if (note.title?.startsWith("DEPRECATED")) {
-            note.title = note.title = "⚠️ Deprecated";
+        commit.notes = commit.notes?.map((note) => {
+          note = { ...note };
+
+          if (note.text) {
+            note.text = capitalize(note.text);
           }
+          if (note.title?.startsWith("BREAKING CHANGE")) {
+            note.title = "🚨 Breaking Changes";
+          } else if (note.title?.startsWith("DEPRECATED")) {
+            note.title = "⚠️ Deprecated";
+          }
+
+          return note;
         });
 
         // rework commit message
