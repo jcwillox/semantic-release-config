@@ -24,25 +24,25 @@
     "@semantic-release/git": "^10.0.1",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "destr": "^2.0.3",
-    "execa": "^9.5.1",
+    "execa": "^9.5.2",
     "lodash": "^4.17.21",
-    "semantic-release": "^24.2.0"
+    "semantic-release": "^24.2.1"
   },
   "devDependencies": {
     "@tsconfig/node20": "20.1.4",
-    "@types/lodash": "4.17.12",
-    "@types/node": "22.8.2",
+    "@types/lodash": "4.17.14",
+    "@types/node": "22.10.5",
     "@types/semantic-release__error": "3.0.3",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "eslint": "8.57.1",
     "eslint-config-prettier": "9.1.0",
-    "eslint-import-resolver-typescript": "3.6.3",
+    "eslint-import-resolver-typescript": "3.7.0",
     "eslint-plugin-import": "npm:eslint-plugin-i@2.29.1",
     "eslint-plugin-only-warn": "1.1.0",
     "eslint-plugin-prettier": "5.2.1",
-    "prettier": "3.3.3",
+    "prettier": "3.4.2",
     "tsup": "8.3.5",
-    "typescript": "5.6.3"
+    "typescript": "5.7.3"
   },
   "bin": "dist/cli.js",
   "main": "dist/index.cjs",
@@ -116,7 +116,7 @@
     "access": "public",
     "provenance": true
   },
-  "packageManager": "pnpm@9.12.3",
+  "packageManager": "pnpm@9.15.3",
   "engines": {
     "node": "^20 || ^22"
   }
