@@ -7,15 +7,15 @@ import type { ReleaseNotesPlugin } from "./types";
 const COMMIT_TYPES: Record<string, string> = {
   feat: "✨ Features",
   fix: "🐛 Bug Fixes",
-  perf: "⚡ Performance",
-  revert: "🗑️ Reverts",
+  perf: "\u26A1 Performance",
+  revert: "\uD83D\uDDD1\uFE0F Reverts",
   docs: "📚 Documentation",
   style: "🎨 Style",
-  chore: "🏗️ Chore",
-  refactor: "♻️ Refactoring",
+  chore: "\uD83C\uDFD7\uFE0F Chore",
+  refactor: "\u267B\uFE0F Refactoring",
   test: "🚦 Test",
   build: "📦 Build",
-  ci: "⚙️ Continuous Integration",
+  ci: "\u2699\uFE0F Continuous Integration",
 };
 
 const merges = new Set<string>();
@@ -68,7 +68,7 @@ export const releaseNotesConfig = definePlugin<ReleaseNotesPlugin>([
           if (note.title?.startsWith("BREAKING CHANGE")) {
             note.title = "🚨 Breaking Changes";
           } else if (note.title?.startsWith("DEPRECATED")) {
-            note.title = "⚠️ Deprecated";
+            note.title = "\u26A0\uFE0F Deprecated";
           }
 
           return note;

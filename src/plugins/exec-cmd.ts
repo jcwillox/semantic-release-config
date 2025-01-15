@@ -11,11 +11,12 @@ const runFailCommand = async (
   ctx.logger.log('Running command "%s"', cmd);
   try {
     return await runCommand(cmd, ctx);
-  } catch (error) {
-    if (isExecaError(error)) {
-      throw new SemanticReleaseError(error.shortMessage, errorName);
-    } else if (error instanceof Error) {
-      throw new SemanticReleaseError(error.message, errorName);
+  } catch (err) {
+    if (isExecaError(err)) {
+      throw new SemanticReleaseError(err.shortMessage, errorName);
+    }
+    if (err instanceof Error) {
+      throw new SemanticReleaseError(err.message, errorName);
     }
   }
 };

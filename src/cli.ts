@@ -1,6 +1,6 @@
 #! /usr/bin/env node
-import { execFileSync } from "child_process";
-import path from "path";
+import { execFileSync } from "node:child_process";
+import path from "node:path";
 
 execFileSync(
   path.resolve(__dirname, "../node_modules/.bin/semantic-release"),

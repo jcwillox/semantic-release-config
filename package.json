@@ -5,19 +5,17 @@
   "author": "Josh Willox <joshwillox@gmail.com> (https://github.com/jcwillox/)",
   "license": "MIT",
   "repository": "jcwillox/semantic-release-config",
-  "keywords": [
-    "semantic-release"
-  ],
+  "keywords": ["semantic-release"],
   "type": "module",
   "scripts": {
     "semantic-release": "node ./dist/cli.js",
     "dev": "tsup --watch",
     "build": "tsup",
     "typecheck": "tsc",
-    "lint": "eslint . --cache --max-warnings=0 --ext js,cjs,mjs,jsx,ts,tsx",
-    "lint:fix": "pnpm run lint --fix",
-    "format": "prettier --cache --write .",
-    "format:check": "prettier --cache --check ."
+    "lint": "biome lint",
+    "lint:fix": "biome lint -w",
+    "format": "biome format --write",
+    "format:check": "biome format"
   },
   "dependencies": {
     "@semantic-release/error": "^4.0.0",
@@ -29,27 +27,18 @@
     "semantic-release": "^24.2.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@tsconfig/node20": "20.1.4",
     "@types/lodash": "4.17.14",
     "@types/node": "22.10.5",
     "@types/semantic-release__error": "3.0.3",
-    "@typescript-eslint/eslint-plugin": "7.18.0",
-    "eslint": "8.57.1",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-import-resolver-typescript": "3.7.0",
-    "eslint-plugin-import": "npm:eslint-plugin-i@2.29.1",
-    "eslint-plugin-only-warn": "1.1.0",
-    "eslint-plugin-prettier": "5.2.1",
-    "prettier": "3.4.2",
     "tsup": "8.3.5",
     "typescript": "5.7.3"
   },
   "bin": "dist/cli.js",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "exports": {
     ".": {
       "import": {

@@ -1,5 +1,5 @@
 import { destr } from "destr";
-import { ExecaError, execa, parseCommandString } from "execa";
+import { type ExecaError, execa, parseCommandString } from "execa";
 import template from "lodash/fp/template.js";
 import type { VerifyConditionsContext } from "semantic-release";
 

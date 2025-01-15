@@ -6,7 +6,7 @@ import { definePluginHooks } from "../utils";
 const readIfExists = async (path: string) => {
   try {
     return (await readFile(path)).toString().trim();
-  } catch (e) {
+  } catch (_) {
     return "";
   }
 };
@@ -43,6 +43,7 @@ export default definePluginHooks({
     }
 
     const result =
+      // biome-ignore lint/style/useTemplate: clarity
       (changelogTitle && `${changelogTitle}\n\n`) +
       `${newContent}\n` +
       // append existing content
