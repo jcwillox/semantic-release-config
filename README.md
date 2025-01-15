@@ -23,12 +23,13 @@ pnpm dlx @jcwillox/semantic-release-config
 The config is designed to be controlled through environment variables, all envs must be prefixed with `SEMANTIC_RELEASE_`.
 
 | Option                | Description                                                                                                                     | Default                                                              |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------| -------------------------------------------------------------------- |
 | `NPM_ENABLE`          | Enable/disable the npm plugin                                                                                                   | `true` when `package.json` exists and `private` is not set to `true` |
 | `NPM_PKG_ROOT`        | Directory path to publish                                                                                                       | `.`                                                                  |
 |                       |                                                                                                                                 |                                                                      |
 | `GITHUB_ASSETS`       | Assets glob to upload to the GitHub release                                                                                     |                                                                      |
 | `GITHUB_DRAFT`        | Create a draft release on GitHub                                                                                                | `false`                                                              |
+| `GITHUB_DISCUSSION`   | Category name in which to create a discussion for the release, if value is set to `true` category will be `General`             | `false`                                                              |
 |                       |                                                                                                                                 |                                                                      |
 | `FORCE_RELEASE`       | Forces the specified release type to be made, one of `major`, `minor`, `patch`, `auto`                                          | `auto`                                                               |
 |                       |                                                                                                                                 |                                                                      |
