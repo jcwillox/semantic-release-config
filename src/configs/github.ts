@@ -1,3 +1,4 @@
+import { destr } from "destr";
 import { definePlugin, parseBool } from "../utils";
 
 const discussion =
@@ -7,7 +8,9 @@ const discussion =
 export const githubConfig = definePlugin([
   "@semantic-release/github",
   {
-    assets: process.env.SEMANTIC_RELEASE_GITHUB_ASSETS,
+    assets:
+      process.env.SEMANTIC_RELEASE_GITHUB_ASSETS &&
+      destr(process.env.SEMANTIC_RELEASE_GITHUB_ASSETS),
     draftRelease: parseBool(process.env.SEMANTIC_RELEASE_GITHUB_DRAFT),
     discussionCategoryName: discussion === true ? "General" : discussion,
   },
