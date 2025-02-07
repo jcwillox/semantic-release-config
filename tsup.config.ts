@@ -9,6 +9,7 @@ export default defineConfig({
     "utils/run-command": "src/utils/run-command.ts",
     changelog: "src/plugins/changelog.ts",
     "exec-cmd": "src/plugins/exec-cmd.ts",
+    "exec-pre-cmd": "src/plugins/exec-pre-cmd.ts",
     "force-publish": "src/plugins/force-publish.ts",
   },
   format: ["cjs", "esm"],

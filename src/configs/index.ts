@@ -5,5 +5,6 @@ export * from "./slack-bot";
 export * from "./npm";
 export * from "./github";
 export * from "./exec-cmd";
+export * from "./exec-pre-cmd";
 export * from "./force-release";
 export * from "./git";

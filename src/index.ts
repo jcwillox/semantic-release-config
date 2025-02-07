@@ -3,6 +3,7 @@ import {
   changelogConfig,
   commitAnalyzerConfig,
   execConfig,
+  execPreConfig,
   forceReleaseConfig,
   gitConfig,
   githubConfig,
@@ -24,6 +25,7 @@ const config: Options = {
   ],
   plugins: ((...plugins: (PluginSpec | undefined | false)[]) =>
     plugins.filter(isTruthy))(
+    execPreConfig,
     commitAnalyzerConfig,
     releaseNotesConfig,
     changelogConfig,

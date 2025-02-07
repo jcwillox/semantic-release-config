@@ -1,25 +1,5 @@
-import SemanticReleaseError from "@semantic-release/error";
-import type { VerifyConditionsContext } from "semantic-release";
 import { definePluginHooks } from "../utils";
-import { isExecaError, runCommand } from "../utils/run-command";
-
-const runFailCommand = async (
-  cmd: string,
-  ctx: VerifyConditionsContext,
-  errorName: string,
-) => {
-  ctx.logger.log('Running command "%s"', cmd);
-  try {
-    return await runCommand(cmd, ctx);
-  } catch (err) {
-    if (isExecaError(err)) {
-      throw new SemanticReleaseError(err.shortMessage, errorName);
-    }
-    if (err instanceof Error) {
-      throw new SemanticReleaseError(err.message, errorName);
-    }
-  }
-};
+import { runFailCommand } from "../utils/run-command";
 
 export default definePluginHooks({
   verifyConditions: async (_, ctx) => {

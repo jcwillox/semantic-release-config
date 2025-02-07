@@ -90,6 +90,16 @@
         "default": "./dist/exec-cmd.js"
       }
     },
+    "./exec-pre-cmd": {
+      "import": {
+        "types": "./dist/exec-pre-cmd.d.ts",
+        "default": "./dist/exec-pre-cmd.js"
+      },
+      "require": {
+        "types": "./dist/exec-pre-cmd.d.ts",
+        "default": "./dist/exec-pre-cmd.js"
+      }
+    },
     "./force-publish": {
       "import": {
         "types": "./dist/force-publish.d.ts",
