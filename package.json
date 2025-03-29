@@ -24,16 +24,16 @@
     "destr": "^2.0.3",
     "execa": "^9.5.2",
     "lodash": "^4.17.21",
-    "semantic-release": "^24.2.1"
+    "semantic-release": "^24.2.3"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@tsconfig/node20": "20.1.4",
-    "@types/lodash": "4.17.14",
-    "@types/node": "22.10.5",
+    "@tsconfig/node20": "20.1.5",
+    "@types/lodash": "4.17.16",
+    "@types/node": "22.13.13",
     "@types/semantic-release__error": "3.0.3",
-    "tsup": "8.3.5",
-    "typescript": "5.7.3"
+    "tsup": "8.4.0",
+    "typescript": "5.8.2"
   },
   "bin": "dist/cli.js",
   "main": "dist/index.cjs",
@@ -115,7 +115,7 @@
     "access": "public",
     "provenance": true
   },
-  "packageManager": "pnpm@10.6.4",
+  "packageManager": "pnpm@10.7.0",
   "engines": {
     "node": "^20 || ^22"
   },
