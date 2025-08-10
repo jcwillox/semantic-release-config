@@ -1,14 +1,12 @@
+import { env } from "../env.ts";
 import { definePlugin, getRepositoryName } from "../utils";
 
 // add zero width character between @ and package name to prevent slack
 // from parsing it as a mention.
-const packageName =
-  process.env.SEMANTIC_RELEASE_PACKAGE ??
-  getRepositoryName().replace(/^@/, "@​");
+const packageName = (env.package ?? getRepositoryName()).replace(/^@/, "@​");
 
-export const slackBotConfig =
-  process.env.SLACK_WEBHOOK &&
-  definePlugin([
+export const slackBotConfig = definePlugin(
+  [
     "semantic-release-slack-bot",
     {
       packageName,
@@ -28,4 +26,6 @@ export const slackBotConfig =
         },
       ],
     },
-  ]);
+  ],
+  !!env.slackWebhook,
+);

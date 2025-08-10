@@ -1,6 +1,7 @@
+import { env } from "../env.ts";
 import { definePlugin } from "../utils";
 
-export const forceReleaseConfig =
-  process.env.SEMANTIC_RELEASE_FORCE_RELEASE &&
-  process.env.SEMANTIC_RELEASE_FORCE_RELEASE !== "auto" &&
-  definePlugin("@jcwillox/semantic-release-config/force-publish");
+export const forceReleaseConfig = definePlugin(
+  "@jcwillox/semantic-release-config/force-publish",
+  !!env.forceRelease && env.forceRelease !== "auto",
+);

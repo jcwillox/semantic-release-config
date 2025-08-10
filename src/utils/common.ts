@@ -13,6 +13,7 @@ import type {
   VerifyConditionsContext,
   VerifyReleaseContext,
 } from "semantic-release";
+import { env } from "../env.ts";
 
 type Hooks = {
   verifyConditions?: (
@@ -29,7 +30,11 @@ type Hooks = {
   fail?: (config: Options, context: FailContext) => unknown;
 };
 
-export const definePlugin = <T extends PluginSpec>(config: T): T => config;
+export const definePlugin = <T extends PluginSpec>(
+  config: T,
+  enabled = true,
+) => (enabled ? config : undefined);
+
 export const definePluginHooks = (hooks: Hooks) => hooks;
 
 export function getPackageJSON(): Record<string, unknown> | undefined {
@@ -43,8 +48,8 @@ export function getRepositoryName(): string {
   if (typeof pkg?.name === "string") {
     return pkg.name;
   }
-  if (process.env.GITHUB_REPOSITORY) {
-    return process.env.GITHUB_REPOSITORY.split("/")[1];
+  if (env.githubRepository) {
+    return env.githubRepository.split("/")[1];
   }
   return basename(process.cwd());
 }
@@ -56,13 +61,7 @@ export function getRepositoryName(): string {
  * @example array.filter(isTruthy)
  */
 export function isTruthy<T>(v: T): v is Exclude<NonNullable<T>, false> {
-  return Boolean(v);
-}
-
-export function parseBool(value: string | undefined): boolean | undefined {
-  if (value === "true") return true;
-  if (value === "false") return false;
-  return undefined;
+  return !!v;
 }
 
 export function capitalize(s: string): string {

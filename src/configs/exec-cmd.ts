@@ -6,5 +6,7 @@ const enabled = Object.keys(process.env).some(
     !x.startsWith("SEMANTIC_RELEASE_CMD_PRE_"),
 );
 
-export const execConfig =
-  enabled && definePlugin("@jcwillox/semantic-release-config/exec-cmd");
+export const execConfig = definePlugin(
+  "@jcwillox/semantic-release-config/exec-cmd",
+  enabled,
+);
