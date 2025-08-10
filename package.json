@@ -20,7 +20,7 @@
   "dependencies": {
     "@semantic-release/error": "^4.0.0",
     "@semantic-release/git": "^10.0.1",
-    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "conventional-changelog-conventionalcommits": "^9.1.0",
     "destr": "^2.0.5",
     "execa": "^9.6.0",
     "lodash": "^4.17.21",
