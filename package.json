@@ -118,7 +118,7 @@
   },
   "packageManager": "pnpm@10.14.0",
   "engines": {
-    "node": "^20 || ^22"
+    "node": "^20 || ^22 || ^24.0.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]
