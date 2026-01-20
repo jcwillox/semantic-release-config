@@ -5,7 +5,9 @@
   "author": "Josh Willox <joshwillox@gmail.com> (https://github.com/jcwillox/)",
   "license": "MIT",
   "repository": "jcwillox/semantic-release-config",
-  "keywords": ["semantic-release"],
+  "keywords": [
+    "semantic-release"
+  ],
   "type": "module",
   "scripts": {
     "semantic-release": "node ./dist/cli.js",
@@ -14,8 +16,10 @@
     "typecheck": "tsc",
     "lint": "biome lint",
     "lint:fix": "biome lint -w",
-    "format": "biome format --write",
-    "format:check": "biome format"
+    "format": "biome format",
+    "format:write": "biome format --write",
+    "check": "biome check",
+    "check:write": "biome check --write"
   },
   "dependencies": {
     "@semantic-release/error": "^4.0.0",
@@ -28,7 +32,7 @@
     "semantic-release-slack-bot": "^4.0.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.3.11",
     "@tsconfig/node20": "20.1.8",
     "@types/lodash": "4.17.23",
     "@types/node": "22.19.7",
@@ -39,7 +43,9 @@
   "bin": "dist/cli.js",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": {
@@ -118,9 +124,12 @@
   },
   "packageManager": "pnpm@10.28.0",
   "engines": {
-    "node": "^20 || ^22"
+    "node": "^24"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]
+    "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "esbuild"
+    ]
   }
 }

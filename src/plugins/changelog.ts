@@ -20,6 +20,7 @@ export default definePluginHooks({
     let changelogFile =
       ctx.env.SEMANTIC_RELEASE_CHANGELOG_FILE || "CHANGELOG.md";
     let changelogPrefix =
+      // biome-ignore lint/suspicious/noTemplateCurlyInString: templated string
       ctx.env.SEMANTIC_RELEASE_CHANGELOG_PREFIX ?? "## ${nextRelease.version}";
 
     changelogTitle = template(changelogTitle)(ctx);
@@ -43,7 +44,6 @@ export default definePluginHooks({
     }
 
     const result =
-      // biome-ignore lint/style/useTemplate: clarity
       (changelogTitle && `${changelogTitle}\n\n`) +
       `${newContent}\n` +
       // append existing content
