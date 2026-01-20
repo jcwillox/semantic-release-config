@@ -13,6 +13,13 @@ const parseIfBool = (value: string | undefined) => {
   return value; // return the original string if not a boolean
 };
 
+const parseArray = (value: string | undefined) => {
+  const parsed = destr(value);
+  if (Array.isArray(parsed)) return parsed.map(String);
+  if (typeof parsed === "string") return [parsed];
+  return undefined;
+};
+
 const getEnv = (name: string) => process.env[`SEMANTIC_RELEASE_${name}`];
 const parseEnv = <T = string>(name: string, transform: (value?: string) => T) =>
   transform(getEnv(name));
@@ -31,6 +38,8 @@ export const env = {
   githubDiscussion: parseEnv("GITHUB_DISCUSSION", parseIfBool),
   githubDraft: parseEnv("GITHUB_DRAFT", parseBool),
   githubRepository: process.env.GITHUB_REPOSITORY,
+  commitMinorTypes: parseEnv("COMMIT_MINOR_TYPES", parseArray),
+  commitPatchTypes: parseEnv("COMMIT_PATCH_TYPES", parseArray),
   npmEnable: parseEnv("NPM_ENABLE", parseBool),
   npmPackageRoot: getEnv("NPM_PACKAGE_ROOT"),
   package: getEnv("PACKAGE"),
