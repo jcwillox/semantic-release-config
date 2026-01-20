@@ -24,7 +24,7 @@
     "destr": "^2.0.5",
     "execa": "^9.6.1",
     "lodash": "^4.17.21",
-    "semantic-release": "^24.2.9",
+    "semantic-release": "^25.0.2",
     "semantic-release-slack-bot": "^4.0.2"
   },
   "devDependencies": {
