@@ -38,7 +38,7 @@
     "@types/node": "24.12.4",
     "@types/semantic-release__error": "3.0.3",
     "tsup": "8.5.1",
-    "typescript": "5.9.3"
+    "typescript": "6.0.3"
   },
   "bin": "dist/cli.js",
   "main": "dist/index.cjs",
